@@ -39,6 +39,8 @@ jobs:
         run: |
           cd Teste_API
           mvn allure:report
+      - name: Listar arquivos no diretório
+        run: ls -la target/allure-results
 
       - name: Save Allure Results
         uses: actions/upload-artifact@v4
