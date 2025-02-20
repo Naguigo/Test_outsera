@@ -31,7 +31,9 @@ jobs:
             ${{ runner.os }}-m2
 
       - name: Install dependencies and run tests
-        run: mvn clean test
+        run: 
+        cd Teste_API  
+        mvn clean test
 
       - name: Generate Allure Report
         run: |
