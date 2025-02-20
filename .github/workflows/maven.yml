@@ -39,3 +39,9 @@ jobs:
         run: |
           cd Teste_API
           mvn allure:report
+
+      - name: Save Allure Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: target/allure-results
