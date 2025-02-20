@@ -37,11 +37,3 @@ jobs:
         run: |
           mvn allure:report
           mvn allure:serve
-  Explicação
-on: Configura o workflow para ser executado em cada push ou pull_request na branch main.
-runs-on: Define o ambiente de execução como ubuntu-latest.
-actions/checkout@v3: Faz o checkout do código do repositório.
-actions/setup-java@v3: Configura o JDK 17.
-actions/cache@v3: Cacheia os pacotes Maven para acelerar builds futuros.
-mvn clean test: Executa os testes.
-mvn allure:report e mvn allure:serve: Gera e serve o relatório do Allure.
