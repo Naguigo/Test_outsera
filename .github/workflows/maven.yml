@@ -56,8 +56,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y k6
 
+      - name: Debug current directory
+        run: |
+         pwd
+         ls -la
+
       - name: Run K6 Performance Test
         run: |
-          cd src/test/java
-          k6 run --out json=resultado.json performanceTest.js
+          cd src/test/java || exit 1
+          ls -la
+          k6 run performanceTest.js
 
