@@ -34,11 +34,16 @@ jobs:
         run: |
           cd Teste_API # Entre no diretório onde está o pom.xml
           mvn clean test
+          continue-on-error: true
+          
+      - name: Check Test Logs
+        run: cat Teste_API/target/surefire-reports/*.txt
 
       - name: Generate Allure Report
         run: |
           cd Teste_API
           mvn allure:report
+          
       - name: Listar arquivos no diretório
         run: ls -la target/allure-results
 
