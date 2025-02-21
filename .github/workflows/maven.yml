@@ -58,12 +58,16 @@ jobs:
 
       - name: Debug current directory
         run: |
-         pwd
-         ls -la
+          pwd
+          ls -la
 
       - name: Run K6 Performance Test
         run: |
           cd src/test/java || exit 1
           ls -la
           k6 run performanceTest.js
+        shell: /usr/bin/bash -e {0}
+        env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
+          JAVA_HOME_17_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.14-7/x64
 
