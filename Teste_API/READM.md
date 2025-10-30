@@ -8,7 +8,7 @@
 "allure serve target/allure-results"
 
 
-## Executar teste de performance
+## Executar teste de performancee
 
 "cd src/test/java"
 
